@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "F78883E0-7FF6-4243-AEFE-8008FD668A36"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3DCDF022-5AD7-494A-8044-A113A3A08B56"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UIAvanzada/TopicsViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "10"
+            endingLineNumber = "10"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  uuid = "3DCDF022-5AD7-494A-8044-A113A3A08B56 - de3189859fdd22e4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UIAvanzada.TopicsViewCell.__deallocating_deinit"
+                  moduleName = "UIAvanzada"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/david/Desktop/7-UI%20Avanzada/Proyecto/UIAvanzada/UIAvanzada/TopicsViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "3DCDF022-5AD7-494A-8044-A113A3A08B56 - 409d47a69217a3aa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UIAvanzada.TopicsViewCell.__allocating_init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; UIAvanzada.TopicsViewCell"
+                  moduleName = "UIAvanzada"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/david/Desktop/7-UI%20Avanzada/Proyecto/UIAvanzada/UIAvanzada/TopicsViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  uuid = "3DCDF022-5AD7-494A-8044-A113A3A08B56 - 8b843a4d4b9119cf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UIAvanzada.TopicsViewCell.init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; UIAvanzada.TopicsViewCell"
+                  moduleName = "UIAvanzada"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/david/Desktop/7-UI%20Avanzada/Proyecto/UIAvanzada/UIAvanzada/TopicsViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "181">
+               </Location>
+               <Location
+                  uuid = "3DCDF022-5AD7-494A-8044-A113A3A08B56 - 7f9db6cc66c58f48"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UIAvanzada.TopicsViewCell.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;UIAvanzada.TopicsViewCell&gt;"
+                  moduleName = "UIAvanzada"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/david/Desktop/7-UI%20Avanzada/Proyecto/UIAvanzada/UIAvanzada/TopicsViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  uuid = "3DCDF022-5AD7-494A-8044-A113A3A08B56 - e14dc97498a4dae3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UIAvanzada.TopicsViewCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;UIAvanzada.TopicsViewCell&gt;"
+                  moduleName = "UIAvanzada"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/david/Desktop/7-UI%20Avanzada/Proyecto/UIAvanzada/UIAvanzada/TopicsViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "119">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
