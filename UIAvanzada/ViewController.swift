@@ -39,10 +39,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.dataSource = self
         tableView.delegate = self
         
-        // TituloViewCell
-        // Registramoas la celda WelcomViewCell.xib
-       // tableView.register(UINib(nibName: "TituloViewCell", bundle: nil), forCellReuseIdentifier: "TituloViewCell")
-        
+       
         // Registramoas la celda WelcomViewCell.xib
         tableView.register(UINib(nibName: "WelcomViewCell", bundle: nil), forCellReuseIdentifier: "WelcomViewCell")
         

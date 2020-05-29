@@ -23,10 +23,6 @@
 		63B7E71C247D6D84002DC5D2 /* UsersCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B7E71A247D6D84002DC5D2 /* UsersCollectionViewCell.xib */; };
 		63B7E71E247D6D9C002DC5D2 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B7E71D247D6D9C002DC5D2 /* UsersViewController.swift */; };
 		63B7E7212480001A002DC5D2 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B7E7202480001A002DC5D2 /* Users.swift */; };
-		63B7E72424815A41002DC5D2 /* WelViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B7E72224815A41002DC5D2 /* WelViewCell.swift */; };
-		63B7E72524815A41002DC5D2 /* WelViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B7E72324815A41002DC5D2 /* WelViewCell.xib */; };
-		63B7E73124817980002DC5D2 /* TitleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B7E72F24817980002DC5D2 /* TitleViewCell.swift */; };
-		63B7E73224817980002DC5D2 /* TitleViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B7E73024817980002DC5D2 /* TitleViewCell.xib */; };
 		63B7E73524817A37002DC5D2 /* WelcomViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B7E73324817A37002DC5D2 /* WelcomViewCell.swift */; };
 		63B7E73624817A37002DC5D2 /* WelcomViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B7E73424817A37002DC5D2 /* WelcomViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -50,10 +46,6 @@
 		63B7E71A247D6D84002DC5D2 /* UsersCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsersCollectionViewCell.xib; sourceTree = "<group>"; };
 		63B7E71D247D6D9C002DC5D2 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
 		63B7E7202480001A002DC5D2 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
-		63B7E72224815A41002DC5D2 /* WelViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelViewCell.swift; sourceTree = "<group>"; };
-		63B7E72324815A41002DC5D2 /* WelViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelViewCell.xib; sourceTree = "<group>"; };
-		63B7E72F24817980002DC5D2 /* TitleViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewCell.swift; sourceTree = "<group>"; };
-		63B7E73024817980002DC5D2 /* TitleViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleViewCell.xib; sourceTree = "<group>"; };
 		63B7E73324817A37002DC5D2 /* WelcomViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomViewCell.swift; sourceTree = "<group>"; };
 		63B7E73424817A37002DC5D2 /* WelcomViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -127,12 +119,8 @@
 			children = (
 				63B7E707247ACB49002DC5D2 /* TopicsViewCell.swift */,
 				63B7E708247ACB49002DC5D2 /* TopicsViewCell.xib */,
-				63B7E72224815A41002DC5D2 /* WelViewCell.swift */,
-				63B7E72324815A41002DC5D2 /* WelViewCell.xib */,
 				63B7E719247D6D84002DC5D2 /* UsersCollectionViewCell.swift */,
 				63B7E71A247D6D84002DC5D2 /* UsersCollectionViewCell.xib */,
-				63B7E72F24817980002DC5D2 /* TitleViewCell.swift */,
-				63B7E73024817980002DC5D2 /* TitleViewCell.xib */,
 				63B7E73324817A37002DC5D2 /* WelcomViewCell.swift */,
 				63B7E73424817A37002DC5D2 /* WelcomViewCell.xib */,
 			);
@@ -203,8 +191,6 @@
 				63B7E6F42479A766002DC5D2 /* Assets.xcassets in Resources */,
 				63B7E6F22479A752002DC5D2 /* Main.storyboard in Resources */,
 				63B7E73624817A37002DC5D2 /* WelcomViewCell.xib in Resources */,
-				63B7E72524815A41002DC5D2 /* WelViewCell.xib in Resources */,
-				63B7E73224817980002DC5D2 /* TitleViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,8 +203,6 @@
 			files = (
 				63B7E714247AF4AF002DC5D2 /* AjustesViewController.swift in Sources */,
 				63B7E6EF2479A752002DC5D2 /* ViewController.swift in Sources */,
-				63B7E73124817980002DC5D2 /* TitleViewCell.swift in Sources */,
-				63B7E72424815A41002DC5D2 /* WelViewCell.swift in Sources */,
 				63B7E7022479A803002DC5D2 /* UIFont+Additions.swift in Sources */,
 				63B7E71E247D6D9C002DC5D2 /* UsersViewController.swift in Sources */,
 				63B7E7212480001A002DC5D2 /* Users.swift in Sources */,
