@@ -22,9 +22,10 @@
 		63B7E71B247D6D84002DC5D2 /* UsersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B7E719247D6D84002DC5D2 /* UsersCollectionViewCell.swift */; };
 		63B7E71C247D6D84002DC5D2 /* UsersCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B7E71A247D6D84002DC5D2 /* UsersCollectionViewCell.xib */; };
 		63B7E71E247D6D9C002DC5D2 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B7E71D247D6D9C002DC5D2 /* UsersViewController.swift */; };
-		63B7E7212480001A002DC5D2 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B7E7202480001A002DC5D2 /* Users.swift */; };
 		63B7E73524817A37002DC5D2 /* WelcomViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B7E73324817A37002DC5D2 /* WelcomViewCell.swift */; };
 		63B7E73624817A37002DC5D2 /* WelcomViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B7E73424817A37002DC5D2 /* WelcomViewCell.xib */; };
+		63B7E7382482B160002DC5D2 /* AddTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B7E7372482B160002DC5D2 /* AddTopicViewController.swift */; };
+		63B7E73E2482CC27002DC5D2 /* DetailTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B7E73D2482CC27002DC5D2 /* DetailTopicViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,9 +46,10 @@
 		63B7E719247D6D84002DC5D2 /* UsersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersCollectionViewCell.swift; sourceTree = "<group>"; };
 		63B7E71A247D6D84002DC5D2 /* UsersCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsersCollectionViewCell.xib; sourceTree = "<group>"; };
 		63B7E71D247D6D9C002DC5D2 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
-		63B7E7202480001A002DC5D2 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		63B7E73324817A37002DC5D2 /* WelcomViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomViewCell.swift; sourceTree = "<group>"; };
 		63B7E73424817A37002DC5D2 /* WelcomViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomViewCell.xib; sourceTree = "<group>"; };
+		63B7E7372482B160002DC5D2 /* AddTopicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTopicViewController.swift; sourceTree = "<group>"; };
+		63B7E73D2482CC27002DC5D2 /* DetailTopicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTopicViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,16 +84,17 @@
 			children = (
 				63B7E6F02479A752002DC5D2 /* Main.storyboard */,
 				63B7E6EE2479A752002DC5D2 /* ViewController.swift */,
-				63B7E71F247FFFCC002DC5D2 /* Model */,
+				63B7E71D247D6D9C002DC5D2 /* UsersViewController.swift */,
+				63B7E7372482B160002DC5D2 /* AddTopicViewController.swift */,
+				63B7E73D2482CC27002DC5D2 /* DetailTopicViewController.swift */,
+				63B7E711247AF476002DC5D2 /* MensajesViewController.swift */,
+				63B7E713247AF4AF002DC5D2 /* AjustesViewController.swift */,
 				63B7E6FE2479A7B0002DC5D2 /* Zeplin */,
 				63B7E6EA2479A752002DC5D2 /* AppDelegate.swift */,
 				63B7E6EC2479A752002DC5D2 /* SceneDelegate.swift */,
 				63B7E6F32479A766002DC5D2 /* Assets.xcassets */,
 				63B7E6F52479A766002DC5D2 /* LaunchScreen.storyboard */,
 				63B7E6F82479A766002DC5D2 /* Info.plist */,
-				63B7E71D247D6D9C002DC5D2 /* UsersViewController.swift */,
-				63B7E711247AF476002DC5D2 /* MensajesViewController.swift */,
-				63B7E713247AF4AF002DC5D2 /* AjustesViewController.swift */,
 				63B7E72624815A4D002DC5D2 /* Celdas */,
 			);
 			path = UIAvanzada;
@@ -104,14 +107,6 @@
 				63B7E6FF2479A7E3002DC5D2 /* UIColor+Additions.swift */,
 			);
 			path = Zeplin;
-			sourceTree = "<group>";
-		};
-		63B7E71F247FFFCC002DC5D2 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				63B7E7202480001A002DC5D2 /* Users.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		63B7E72624815A4D002DC5D2 /* Celdas */ = {
@@ -203,9 +198,10 @@
 			files = (
 				63B7E714247AF4AF002DC5D2 /* AjustesViewController.swift in Sources */,
 				63B7E6EF2479A752002DC5D2 /* ViewController.swift in Sources */,
+				63B7E7382482B160002DC5D2 /* AddTopicViewController.swift in Sources */,
 				63B7E7022479A803002DC5D2 /* UIFont+Additions.swift in Sources */,
+				63B7E73E2482CC27002DC5D2 /* DetailTopicViewController.swift in Sources */,
 				63B7E71E247D6D9C002DC5D2 /* UsersViewController.swift in Sources */,
-				63B7E7212480001A002DC5D2 /* Users.swift in Sources */,
 				63B7E71B247D6D84002DC5D2 /* UsersCollectionViewCell.swift in Sources */,
 				63B7E712247AF476002DC5D2 /* MensajesViewController.swift in Sources */,
 				63B7E73524817A37002DC5D2 /* WelcomViewCell.swift in Sources */,

@@ -116,38 +116,32 @@ extension UsersViewController: UICollectionViewDataSource {
         }
         return cell
     }
-} // End Struct
+}
 
 
-
-// Lo tengo a parte en Model/User.swift porque lo necesito utiulizar en este
-// controlador y en ViewController
-/*
- struct UsersListResponse: Codable {
-     let directoryItems: [Users]
-     enum CodingKeys: String, CodingKey {
-         case directoryItems = "directory_items"
-     }
- }
- 
- struct Users: Codable {
-     let user: User
-     
- }
-
- struct User: Codable {
-     let username: String
-     let name: String?
-     let avatarTemplate: String
-     
-     enum CodingKeys: String, CodingKey {
-         case avatarTemplate = "avatar_template"
-         case username
-         case name
-     }
- }
- */
-
+    struct UsersListResponse: Codable {
+        let directoryItems: [Users]
+        enum CodingKeys: String, CodingKey {
+            case directoryItems = "directory_items"
+        }
+    }
+    
+    struct Users: Codable {
+        let user: User
+        
+    }
+    
+    struct User: Codable {
+        let username: String
+        let name: String?
+        let avatarTemplate: String
+        
+        enum CodingKeys: String, CodingKey {
+            case avatarTemplate = "avatar_template"
+            case username
+            case name
+        }
+    }
 
 
 

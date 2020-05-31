@@ -8,21 +8,21 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{ // , topicDelegate
-    
-    //CONCURRENCIA
-   // protocol topicDelegate {
-   //     func refreshView()
-   // }
-    enum LatestTopicsError: Error {
-        case malformedURL // Si la url esta mal
-        case emptyData
-    }
+protocol topicDelegate {
+    func refreshView()
+}
+
+enum LatestTopicsError: Error {
+    case malformedURL // Si la url esta mal
+    case emptyData
+}
+
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, topicDelegate {
     
     var topics: [Topic] = []
     
     // Para la imagen
-    var users: [Users] = []
+   var users: [User] = []
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -46,15 +46,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Registramoas la celda TopicsViewCell.xib
         tableView.register(UINib(nibName: "TopicsViewCell", bundle: nil), forCellReuseIdentifier: "TopicsViewCell")
         
-        // Configuración del tamaño de la celda usersTopics
-        //configurarTableView()
+        // refreshView()
+        refreshView()
         
-      
-        // Por último la llamada
+        // Ejecuta el RefereshControl
+        tableView.refreshControl = refreshControl
+    }
+    func refreshView() {
         fetchTopics { [weak self] (result) in
             switch result {
             case .success(let let_topics):
                 self?.topics = let_topics
+                // self?.users = latestTopicsResponse.users
                 self?.tableView.reloadData()
             case .failure(let error):
                 self?.showErrorAlert(message: error.localizedDescription)
@@ -63,8 +66,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 print(error)
             }
         }
-        // Ejecuta el RefereshControl
-        tableView.refreshControl = refreshControl
     }
     
     lazy var refreshControl: UIRefreshControl = {
@@ -98,21 +99,30 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         if indexPath.row > 0 {
            if let cell = tableView.dequeueReusableCell(withIdentifier: "TopicsViewCell", for: indexPath) as? TopicsViewCell {
-               cell.textUserTopic.text = topics[indexPath.row].title
-               cell.postsCountLabel.text = String(topics[indexPath.row].posts_count)
-               
+             
                // TITLE and Num Topics
-               
                cell.textUserTopic.text = topics[indexPath.row].title
-               cell.postsCountLabel.text = String(topics[indexPath.row].posts_count)
+               cell.postsCountLabel.text = String(topics[indexPath.row].postsCount)
+            
+            // IMAGE AVATAR - Pendiente
+            
+            // Para la imagen
+          // Pendiente. No se desarrollarlo
+            /*
+             Entiendo que debe ser algo como username(de User) == lastPosterUsername(de Topic)
+             y que si es igual me devuelvas un return user
+             a partir de aquí ya me lio con como dibujar la imagen
+             
+             */
+            
                
                // DATE
                
                var myString_date: String
-               myString_date = topics[indexPath.row].last_posted_at
+               myString_date = topics[indexPath.row].lastPostedAt
                
                let inputStringDate = myString_date
-               let inputFormat = "YYYY-MM-DD'T'HH:mm:ss.SSSZ"
+               let inputFormat = "YYYY-MM-dd'T'HH:mm:ss.SSSZ"
                let dateFormatter = DateFormatter()
                dateFormatter.locale = Locale(identifier: "es_ES")
                dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
@@ -126,103 +136,38 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                let outputStringDate = dateFormatter.string(from: my_date)
                cell.lastPostedAtLabel.text = outputStringDate
                
-               // IMAGE AVATAR
-               /*
-                DispatchQueue.global(qos:.userInitiated).async { [weak self] in
-                if let avatarTemplate = self?.users[indexPath.row].user.avatarTemplate {
-                let sized = avatarTemplate.replacingOccurrences(of: "{size}", with: "150")
-                let usersURL = "https://mdiscourse.keepcoding.io\(sized)"
-                guard let url = URL(string: usersURL),
-                let my_data = try? Data(contentsOf: url) else {return}
-                let image = UIImage(data: my_data)
-                
-                DispatchQueue.main.async {
-                cell.avatarUserTopic?.image = image
-                cell.setNeedsLayout()
-                }
-                }
-                }
-                */
                return cell
            }
         }
-        
-        
-        
-        
         fatalError("Could not create Account cells")
-        
-        
     }
-        
-       
-    
-    func my_date(){
-        // Fecha del topic
-       
-            let inputStringDate = "2020-04-20T00:00:00.000Z"
-            //let inputStringDate = myString_date
-            let inputFormat = "YYYY-MM-DD'T'HH:mm:ss.SSSZ"
-            let dateFormatter = DateFormatter()
-            dateFormatter.locale = Locale(identifier: "es_ES")
-            dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
-            dateFormatter.dateFormat = inputFormat
-        
-        // Generar la fecha a partir del string y el formato de entrada
-       // guard let my_date = dateFormatter.date(from: inputStringDate) else { return }
-        let my_date = dateFormatter.date(from: inputStringDate)!
-            
-            // May 2020
-            var outputFormat = "MMM yyyy"
-            dateFormatter.dateFormat = outputFormat
-        var outputStringDate = dateFormatter.string(from: my_date)
-        print(outputStringDate)
-    }
+   
     
     // MARK: - UITableViewDelegate
-    /*
-     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-     
-     let topic = topics[indexPath.row]
-     // withId : -> convenience
-     let topicsDetailVC = DetailTopicViewController.init(withId: topic.id)
-     topicsDetailVC.delegate = self
-     let navigationController = UINavigationController(rootViewController: topicsDetailVC)
-     navigationController.modalPresentationStyle = .fullScreen
-     self.present(navigationController, animated: true, completion: nil)
-     
-     tableView.deselectRow(at: indexPath, animated: true)
-     }
-     
-     */
     
-    
-    
-    
-    // Necesitará del protocolo de más arriba
-    /*
-     func refreshView() {
-         fetchTopics { [weak self] (result) in
-             switch result {
-             case .success(let latestTopics):
-                 self?.topics = latestTopics
-                 self?.tableView.reloadData()
-             case .failure(let error):
-                 print(error)
-                 self?.showErrorAlert(message: error.localizedDescription)
-             }
-         }
-     }
-     */
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let idCeldaSeleccionada = indexPath.row
+        self.performSegue(withIdentifier: "segueDetalle", sender: idCeldaSeleccionada)
         
         
-    
-    
-    
-    
-    
-    
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+     
+    // MARK: override func SEGUE
+    // Pasar los datos de una pantalla a otra
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "segueDetalle") {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                guard let destinationVC = segue.destination as? DetailTopicViewController else { return }
+                // Aquí los datos a recibir del otro controlador
+              // PENDIENTE
+                // Porque no me funciona ????
+                //  destinationVC.topic = topics[indexPath.row]
+            }
+        }
+        
+    }
     
         func showErrorAlert(message: String) {
                 let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
@@ -286,13 +231,49 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
 
 
+ struct StructResultTopics: Codable {
+     let topicList: TopicList
+     let users: [User]  // Para la imagen
+     enum CodingKeys: String, CodingKey {
+         case topicList = "topic_list"
+         case users  // Para la imagen
+     }
+ }
+
+
+ struct TopicList: Codable {
+     let topics: [Topic]
+ }
+
+ struct Topic: Codable {
+     let id: Int
+     let title: String
+     let postsCount: Int
+     let lastPostedAt: String
+     let lastPosterUsername: String
+     let posters: [Poster]
+     enum CodingKeys: String, CodingKey {
+         case id
+         case title
+         case postsCount = "posts_count"
+         case lastPostedAt = "last_posted_at"
+         case posters
+         case lastPosterUsername = "last_poster_username"
+     }
+ }
+
+ struct Poster: Codable {
+     let description: String
+     let user_id: Int
+ }
+ 
+/*
 struct StructResultTopics: Codable {
     let topicList: TopicList
     enum CodingKeys: String, CodingKey {
         case topicList = "topic_list"
     }
 }
-
 
 struct TopicList: Codable {
     let topics: [Topic]
@@ -301,67 +282,7 @@ struct TopicList: Codable {
 struct Topic: Codable {
     let id: Int
     let title: String
-    let posts_count: Int
-    let last_posted_at: String
     
 }
-
-
-
-
-
-// BACKUP
-/*
- func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-     
-     
-     guard let cell = tableView.dequeueReusableCell(withIdentifier: "TopicsViewCell", for: indexPath) as? TopicsViewCell else {
-         fatalError()}
-     cell.textUserTopic.text = topics[indexPath.row].title
-     cell.postsCountLabel.text = String(topics[indexPath.row].posts_count)
-     
-     // TITLE and Num Topics
-     
-     cell.textUserTopic.text = topics[indexPath.row].title
-     cell.postsCountLabel.text = String(topics[indexPath.row].posts_count)
-     
-     // DATE
-     
-     var myString_date: String
-     myString_date = topics[indexPath.row].last_posted_at
-     
-     let inputStringDate = myString_date
-     let inputFormat = "YYYY-MM-DD'T'HH:mm:ss.SSSZ"
-     let dateFormatter = DateFormatter()
-     dateFormatter.locale = Locale(identifier: "es_ES")
-     dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
-     dateFormatter.dateFormat = inputFormat
-     
-     // Generar la fecha a partir del string y el formato de entrada
-     let my_date = dateFormatter.date(from: inputStringDate)!
-     // May 2020
-     let outputFormat = "MMM yyyy"
-     dateFormatter.dateFormat = outputFormat
-     let outputStringDate = dateFormatter.string(from: my_date)
-     cell.lastPostedAtLabel.text = outputStringDate
-     
-     // IMAGE AVATAR
-     /*
-      DispatchQueue.global(qos:.userInitiated).async { [weak self] in
-      if let avatarTemplate = self?.users[indexPath.row].user.avatarTemplate {
-      let sized = avatarTemplate.replacingOccurrences(of: "{size}", with: "150")
-      let usersURL = "https://mdiscourse.keepcoding.io\(sized)"
-      guard let url = URL(string: usersURL),
-      let my_data = try? Data(contentsOf: url) else {return}
-      let image = UIImage(data: my_data)
-      
-      DispatchQueue.main.async {
-      cell.avatarUserTopic?.image = image
-      cell.setNeedsLayout()
-      }
-      }
-      }
-      */
-     return cell
- }
  */
+
